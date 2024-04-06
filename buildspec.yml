@@ -23,5 +23,5 @@ artifacts:
   files:
     - appspec.yml
     - awscicd/*.jar
+    - scripts/**
   discard-paths: yes
-
