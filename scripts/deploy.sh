@@ -7,15 +7,10 @@ echo "> build 파일 복사"
 DEPLOY_PATH=/home/ec2-user/
 cp $BUILD_PATH $DEPLOY_PATH
 
-echo "> lunch-0.0.1-SNAPSHOT.jar 교체"
-CP_JAR_PATH=$DEPLOY_PATH$JAR_NAME
-APPLICATION_JAR_NAME=lunch-0.0.1-SNAPSHOT.jar
-APPLICATION_JAR=$DEPLOY_PATH$APPLICATION_JAR_NAME
-
-ln -Tfs $CP_JAR_PATH $APPLICATION_JAR
+APPLICATION_JAR=$CP_JAR_PATH
 
 echo "> 현재 실행중인 애플리케이션 pid 확인"
-CURRENT_PID=$(pgrep -f $APPLICATION_JAR_NAME)
+CURRENT_PID=$(pgrep -f $JAR_NAME)
 
 if [ -z $CURRENT_PID ]
 then
@@ -27,4 +22,4 @@ else
 fi
 
 echo "> $APPLICATION_JAR 배포"
-nohup java -jar $APPLICATION_JAR > /dev/null 2> /dev/null < /dev/null &
+nohup java -jar $APPLICATION_JAR &
