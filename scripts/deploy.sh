@@ -7,8 +7,6 @@ echo "> build 파일 복사"
 DEPLOY_PATH=/home/ec2-user/
 cp $BUILD_PATH $DEPLOY_PATH
 
-APPLICATION_JAR=$CP_JAR_PATH
-
 echo "> 현재 실행중인 애플리케이션 pid 확인"
 CURRENT_PID=$(pgrep -f $JAR_NAME)
 
@@ -21,5 +19,5 @@ else
   sleep 5
 fi
 
-echo "> $APPLICATION_JAR 배포"
-nohup java -jar $APPLICATION_JAR &
+echo "> $CP_JAR_PATH 배포"
+nohup java -jar $CP_JAR_PATH &
