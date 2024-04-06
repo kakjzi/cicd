@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+    commands:
+      - echo "Installing dependencies..."
+
+  pre_build:
+    commands:
+      - echo "Running pre-build steps..."
+
+  build:
+    commands:
+      - echo "Running build steps..."
+
+  post_build:
+    commands:
+      - echo "Running post-build steps..."
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: yes
+
