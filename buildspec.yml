@@ -22,5 +22,6 @@ phases:
 artifacts:
   files:
     - appspec.yml
-    - /awscicd/*.jar
+    - awscicd/*.jar
   discard-paths: yes
+
