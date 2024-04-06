@@ -19,5 +19,5 @@ else
   sleep 5
 fi
 
-echo "> $CP_JAR_PATH 배포"
-nohup java -jar $CP_JAR_PATH &
+echo "> $JAR_NAME 배포"
+nohup java -jar $DEPLOY_PATH$JAR_NAME &
